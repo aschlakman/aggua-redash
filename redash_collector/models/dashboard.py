@@ -1,7 +1,7 @@
 from typing import Optional, Dict, List
 from pydantic import BaseModel
 
-from redash_collector.query import QueryModel
+from redash_collector.models.query import QueryModel
 
 
 class WidgetModel(BaseModel):
