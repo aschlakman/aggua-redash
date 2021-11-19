@@ -1,9 +1,7 @@
 import os
 
 from redash_toolbelt import Redash
-from redash_collector.table_retriever import get_tables
-from redash_collector.dashboard_retriever import get_dashboards
-from redash_collector.query_retriever import get_queries
+from redash_collector import get_tables, get_dashboards, get_queries
 
 key = os.getenv('TOKEN')
 url = 'https://app.redash.io/hasadna'
