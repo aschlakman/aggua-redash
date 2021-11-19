@@ -10,7 +10,7 @@ def get_tables(client: 'Redash') -> List[TableModel]:
     data_sources = client.get_data_sources()
     for data_source in data_sources:
         data_source_id = data_source['id']
-        schema_type = data_source['syntax']
+        schema_name = data_source['name']
         # Copied from redash toolbelt example, a little hacky
         schemas = client._get(f"api/data_sources/{data_source_id}/schema").json().get("schema", [])
         for schema in schemas:
@@ -19,7 +19,7 @@ def get_tables(client: 'Redash') -> List[TableModel]:
             # TODO: add missing id
             table = TableModel(id=0,
                                data_source_id=data_source_id,
-                               table_schema=schema_type,
+                               table_schema=schema_name,
                                name=table_name,
                                columns=column_names,
                                )
