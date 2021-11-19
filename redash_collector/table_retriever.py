@@ -5,8 +5,7 @@ from redash_toolbelt import Redash
 from redash_collector.models.table import TableModel
 
 
-def get_tables(url, key) -> List[TableModel]:
-    client = Redash(url, key)
+def get_tables(client: 'Redash') -> List[TableModel]:
     tables: List[TableModel] = []
     data_sources = client.get_data_sources()
     for data_source in data_sources:

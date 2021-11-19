@@ -9,7 +9,7 @@ class QueryModel(BaseModel):
     description: Optional[str]
     sql: str
     owner_name: str
-    last_update_time: str
+    last_update_time: Optional[str]
 
     @staticmethod
     def from_json(data: Dict):
